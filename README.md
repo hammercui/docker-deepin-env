@@ -84,3 +84,37 @@ source ~/.bashrc
 
 1.官网下载virtual box 6.1
 2.下载win7镜像msdn
+
+### 9 系统自带Android虚拟机
+
+1.打开设置页面`/usr/bin/uengine-launch.sh --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity`
+2. 安装软件`apt search uengine ihunman`
+3. 安装 `sudo apt install uengine.com.tencent.mobileqq`
+
+
+### 10 安装dotnet
+>.net 6是大一统的版本
+
+debian10
+
+
+```
+wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+```
+
+```
+sudo apt-get update; \
+  sudo apt-get install -y apt-transport-https && \
+  sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-6.0
+```
+
+### 11 安装git-lfs
+
+```
+curl -o /etc/apt/sources.list.d/git-lfs.list "https://packagecloud.io/install/repositories/github/git-lfs/config_file.list?os=debian&dist=stretch&source=script"
+curl -L "https://packagecloud.io/github/git-lfs/gpgkey" 2> /dev/null | apt-key add -
+apt update && apt install git-lfs
+```
