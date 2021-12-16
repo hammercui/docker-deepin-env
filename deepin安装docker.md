@@ -29,3 +29,16 @@ sudo apt-get install docker-ce=5:19.03.11~3-0~debian-stretch docker-ce-cli=5:19.
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
+8 非root用户使用docker
+
+创建docker组
+
+sudo groupadd docker
+
+将当前用户加入docker组
+sudo gpasswd -a ${USER} docker
+
+重新启动docker服务（下面是CentOS7的命令）
+sudo systemctl restart docker
+
+当前用户退出系统重新登陆
